@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import TongHop.SQLService;
+
 public class ThemBan extends JFrame{
 	Connection conn;
 	JTextField txtMa,txtBan;
@@ -25,7 +27,8 @@ public class ThemBan extends JFrame{
 	public ThemBan()
 	{
 	
-		SQLService2();
+		SQLService co = new SQLService();
+		conn =co.connect1();
 		addControls();
 		addEvents();
 	
@@ -33,20 +36,7 @@ public class ThemBan extends JFrame{
 	}
 
 
-	private void SQLService2() {
-		try
-		{
-		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLyNhaHang;integratedSecurity=true;";
-		conn= DriverManager.getConnection(connectionUrl);
-	    
-		}catch(Exception e)
-		{
-			JOptionPane.showMessageDialog(null, "kết nối cơ sở dữ liệu thất bại");
-			e.printStackTrace();
-		}
-		
-	}
+
 
 
 	private void addEvents() {
@@ -83,6 +73,7 @@ public class ThemBan extends JFrame{
 		txtMa = new JTextField(15);
 		pnMa.add(lblMa);
 		pnMa.add(txtMa);
+		txtMa.setEnabled(false);
 		
 		JPanel  pnTen = new JPanel();
 		pnTen.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -90,6 +81,7 @@ public class ThemBan extends JFrame{
 		txtBan = new JTextField(15);
 		pnTen.add(lblTen);
 		pnTen.add(txtBan);
+		
 		
 		JPanel  pnBut = new JPanel();
 		pnBut.setLayout(new FlowLayout(FlowLayout.CENTER));
