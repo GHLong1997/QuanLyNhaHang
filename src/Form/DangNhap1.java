@@ -108,7 +108,7 @@ public class DangNhap1 extends JFrame {
 		}else
 			{
 		try{
-				 String sql= "Select * from User2 where TenUser=? and PassWord=?";
+				 String sql= "Select * from User2 where TenUser=? and PassWord1=?";
 				  PreparedStatement prepare = conn.prepareStatement(sql);
 				  prepare.setString(1, txtUser.getText());
 				  prepare.setString(2, String.valueOf(txtPass.getPassword()));

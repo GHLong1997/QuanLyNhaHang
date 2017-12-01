@@ -14,7 +14,7 @@ public class SQLService {
 		try
 		{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLySanPham;integratedSecurity=true;";
+		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLyNhaHang;integratedSecurity=true;";
 		conn= DriverManager.getConnection(connectionUrl);
 	    
 		}catch(Exception e)
@@ -27,7 +27,7 @@ public class SQLService {
 		try
 		{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLySanPham;integratedSecurity=true;";
+		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLyNhaHang;integratedSecurity=true;";
 		conn= DriverManager.getConnection(connectionUrl);
 	    
 		}catch(Exception e)
@@ -41,7 +41,7 @@ public class SQLService {
 		try
 		{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLySanPham;integratedSecurity=true;";
+		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLyNhaHang;integratedSecurity=true;";
 		con= DriverManager.getConnection(connectionUrl);
 		return con;
 	    

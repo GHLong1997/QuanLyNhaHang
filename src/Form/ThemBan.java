@@ -37,7 +37,7 @@ public class ThemBan extends JFrame{
 		try
 		{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLySanPham;integratedSecurity=true;";
+		String connectionUrl="jdbc:sqlserver://DESKTOP-M75UEQH:1433;databaseName=QuanLyNhaHang;integratedSecurity=true;";
 		conn= DriverManager.getConnection(connectionUrl);
 	    
 		}catch(Exception e)
@@ -55,11 +55,11 @@ public class ThemBan extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try{
-					String sql = "Insert into Ban values(?,?,?)";
+					String sql = "Insert into Ban values(?,?)";
 					PreparedStatement pre = conn.prepareStatement(sql);
-					pre.setString(1, txtMa.getText());
-					pre.setString(2, txtBan.getText());
-					pre.setInt(3, 0);
+					
+					pre.setString(1, txtBan.getText());
+					pre.setInt(2, 0);
 					int i = pre.executeUpdate();
 				}catch(Exception ex)
 				{

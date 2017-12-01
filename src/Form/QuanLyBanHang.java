@@ -444,16 +444,16 @@ btnIn.addActionListener(new ActionListener() {
 	}
 	
 	public void HienThiDanhSachBan() {
-		//ri ne , h m thử làm theo cách t dc ko rồi cai kia tính sau, lấy csdl trước đi đã
+	
 		BanService dm = new BanService();
-		dsBan = dm.DanhSachBan();//lấy dc ds bàn
+		dsBan = dm.DanhSachBan();
 		  for (Ban ban : dsBan) {
 			  JPanel pn = new JPanel();
 			  pn.setLayout(new BoxLayout(pn, BoxLayout.Y_AXIS));
-			JPanel p = new JPanel();
+			  JPanel p= new JPanel();
+			  pn.add(p);
 			JButton btn = new JButton();
-//			btn.setPreferredSize(new Dimension(75, 75));
-			btn.setSize(75,75);
+			btn.setPreferredSize(new Dimension(75, 75));
 			btn.setIcon(new ImageIcon("img/n.jpg"));
 			JLabel lbl= new JLabel(ban.getTenBan());
 			lbl.setAlignmentX(CENTER_ALIGNMENT);
